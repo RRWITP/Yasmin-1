@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -19,15 +12,21 @@ use InvalidArgumentException;
 use RuntimeException;
 
 /**
+ * Class PartialGuild
+ *
  * Represents a partial guild.
  *
- * @property string $id                The guild ID.
- * @property string $name              The guild name.
- * @property int $createdTimestamp  The timestamp when this guild was created.
+ * @property string      $id                The guild ID.
+ * @property string      $name              The guild name.
+ * @property int         $createdTimestamp  The timestamp when this guild was created.
  * @property string|null $icon              The guild icon, or null.
  * @property string|null $splash            The guild splash, or null.
+ * @property DateTime    $createdAt          The DateTime instance of createdTimestamp.
  *
- * @property DateTime $createdAt          The DateTime instance of createdTimestamp.
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class PartialGuild extends ClientBase
 {

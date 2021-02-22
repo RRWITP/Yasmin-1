@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -34,53 +27,59 @@ use function React\Promise\resolve;
 use RuntimeException;
 
 /**
+ * Class Guid
+ *
  * Represents a guild. It's recommended to see if a guild is available before performing operations or reading data from it.
  *
- * @property string $id                           The guild ID.
- * @property int $shardID                      On which shard this guild is.
- * @property bool $available                    Whether the guild is available.
- * @property string $name                         The guild name.
- * @property int $createdTimestamp             The timestamp when this guild was created.
- * @property string|null $icon                         The guild icon hash, or null.
- * @property string|null $splash                       The guild splash hash, or null.
- * @property string $ownerID                      The ID of the owner.
- * @property bool $large                        Whether the guild is considered large.
- * @property bool $lazy                         Whether this guild is run in lazy mode (on the Discord node).
- * @property int $memberCount                  How many members the guild has.
- * @property ChannelStorageInterface $channels                     Holds a guild's channels, mapped by their ID.
- * @property EmojiStorageInterface $emojis                       Holds a guild's emojis, mapped by their ID.
+ * @property string                      $id                           The guild ID.
+ * @property int                         $shardID                      On which shard this guild is.
+ * @property bool                        $available                    Whether the guild is available.
+ * @property string                      $name                         The guild name.
+ * @property int                         $createdTimestamp             The timestamp when this guild was created.
+ * @property string|null                 $icon                         The guild icon hash, or null.
+ * @property string|null                 $splash                       The guild splash hash, or null.
+ * @property string                      $ownerID                      The ID of the owner.
+ * @property bool                        $large                        Whether the guild is considered large.
+ * @property bool                        $lazy                         Whether this guild is run in lazy mode (on the Discord node).
+ * @property int                         $memberCount                  How many members the guild has.
+ * @property ChannelStorageInterface     $channels                     Holds a guild's channels, mapped by their ID.
+ * @property EmojiStorageInterface       $emojis                       Holds a guild's emojis, mapped by their ID.
  * @property GuildMemberStorageInterface $members                      Holds a guild's cached members, mapped by their ID.
- * @property RoleStorageInterface $roles                        Holds a guild's roles, mapped by their ID.
- * @property PresenceStorageInterface $presences                    Holds a guild's presences of members, mapped by user ID.
- * @property string $defaultMessageNotifications  The type of message that should notify you. ({@see Guild::DEFAULT_MESSAGE_NOTIFICATIONS})
- * @property string $explicitContentFilter        The explicit content filter level of the guild. ({@see Guild::EXPLICIT_CONTENT_FILTER})
- * @property string $region                       The region the guild is located in.
- * @property string $verificationLevel            The verification level of the guild. ({@see Guild::VERIFICATION_LEVEL})
- * @property string|null $systemChannelID              The ID of the system channel, or null.
- * @property string|null $afkChannelID                 The ID of the afk channel, or null.
- * @property int|null $afkTimeout                   The time in seconds before an user is counted as "away from keyboard".
- * @property string[] $features                     An array of guild features.
- * @property string $mfaLevel                     The required MFA level for the guild. ({@see Guild::MFA_LEVEL})
- * @property string|null $applicationID                Application ID of the guild creator, if it is bot-created.
- * @property bool $embedEnabled                 Whether the guild is embeddable or not (e.g. widget).
- * @property string|null $embedChannelID               The ID of the embed channel, or null.
- * @property bool $widgetEnabled                Whether the guild widget is enabled or not.
- * @property string|null $widgetChannelID              The ID of the widget channel, or null.
- * @property int|null $maxPresences                 The maximum amount of presences the guild can have, or null.
- * @property int|null $maxMembers                   The maximum amount of members the guild can have, or null.
- * @property string|null $vanityInviteCode             The vanity invite code, or null.
- * @property string|null $description                  Guild description used for Server Discovery, or null.
- * @property string|null $banner                       Guild banner hash used for Server Discovery, or null.
+ * @property RoleStorageInterface        $roles                        Holds a guild's roles, mapped by their ID.
+ * @property PresenceStorageInterface    $presences                    Holds a guild's presences of members, mapped by user ID.
+ * @property string                      $defaultMessageNotifications  The type of message that should notify you. ({@see Guild::DEFAULT_MESSAGE_NOTIFICATIONS})
+ * @property string                      $explicitContentFilter        The explicit content filter level of the guild. ({@see Guild::EXPLICIT_CONTENT_FILTER})
+ * @property string                      $region                       The region the guild is located in.
+ * @property string                      $verificationLevel            The verification level of the guild. ({@see Guild::VERIFICATION_LEVEL})
+ * @property string|null                 $systemChannelID              The ID of the system channel, or null.
+ * @property string|null                 $afkChannelID                 The ID of the afk channel, or null.
+ * @property int|null                    $afkTimeout                   The time in seconds before an user is counted as "away from keyboard".
+ * @property string[]                    $features                     An array of guild features.
+ * @property string                      $mfaLevel                     The required MFA level for the guild. ({@see Guild::MFA_LEVEL})
+ * @property string|null                 $applicationID                Application ID of the guild creator, if it is bot-created.
+ * @property bool                        $embedEnabled                 Whether the guild is embeddable or not (e.g. widget).
+ * @property string|null                 $embedChannelID               The ID of the embed channel, or null.
+ * @property bool                        $widgetEnabled                Whether the guild widget is enabled or not.
+ * @property string|null                 $widgetChannelID              The ID of the widget channel, or null.
+ * @property int|null                    $maxPresences                 The maximum amount of presences the guild can have, or null.
+ * @property int|null                    $maxMembers                   The maximum amount of members the guild can have, or null.
+ * @property string|null                 $vanityInviteCode             The vanity invite code, or null.
+ * @property string|null                 $description                  Guild description used for Server Discovery, or null.
+ * @property string|null                 $banner                       Guild banner hash used for Server Discovery, or null.
+ * @property VoiceChannel|null           $afkChannel                   The guild's afk channel, or null.
+ * @property DateTime                    $createdAt                    The DateTime instance of createdTimestamp.
+ * @property Role                        $defaultRole                  The guild's default role.
+ * @property GuildChannelInterface|null  $embedChannel                 The guild's embed channel, or null.
+ * @property GuildMember                 $me                           The guild member of the client user.
+ * @property GuildChannelInterface|null  $systemChannel                The guild's system channel, or null.
+ * @property bool                        $vanityURL                    Whether the guild has a vanity invite url.
+ * @property bool                        $verified                     Whether the guild is verified.
+ * @property GuildChannelInterface|null  $widgetChannel                The guild's widget channel, or null.
  *
- * @property VoiceChannel|null $afkChannel                   The guild's afk channel, or null.
- * @property DateTime $createdAt                    The DateTime instance of createdTimestamp.
- * @property Role $defaultRole                  The guild's default role.
- * @property GuildChannelInterface|null $embedChannel                 The guild's embed channel, or null.
- * @property GuildMember $me                           The guild member of the client user.
- * @property GuildChannelInterface|null $systemChannel                The guild's system channel, or null.
- * @property bool $vanityURL                    Whether the guild has a vanity invite url.
- * @property bool $verified                     Whether the guild is verified.
- * @property GuildChannelInterface|null $widgetChannel                The guild's widget channel, or null.
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class Guild extends ClientBase
 {

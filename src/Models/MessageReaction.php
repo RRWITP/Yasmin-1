@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -17,13 +10,20 @@ use React\Promise\Promise;
 use RuntimeException;
 
 /**
+ * Class MessageReaction
+ *
  * Represents a message reaction.
  *
- * @property Emoji $emoji     The emoji this message reaction is for.
- * @property int $count     Times this emoji has been reacted.
- * @property bool $me        Whether the current user has reacted using this emoji.
- * @property Message $message   The message this reaction belongs to.
+ * @property Emoji      $emoji     The emoji this message reaction is for.
+ * @property int        $count     Times this emoji has been reacted.
+ * @property bool       $me        Whether the current user has reacted using this emoji.
+ * @property Message    $message   The message this reaction belongs to.
  * @property Collection $users     The users that have given this reaction, mapped by their ID.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class MessageReaction extends ClientBase
 {
@@ -103,36 +103,27 @@ class MessageReaction extends ClientBase
      */
     public function fetchUsers(int $limit = 100, string $before = '', string $after = '')
     {
-        return new Promise(
-            function (callable $resolve, callable $reject) use ($limit, $before, $after) {
-                $query = ['limit' => $limit];
+        return new Promise(function (callable $resolve, callable $reject) use ($limit, $before, $after) {
+            $query = ['limit' => $limit];
 
-                if (! empty($before)) {
-                    $query['before'] = $before;
-                }
+            if (! empty($before)) {
+                $query['before'] = $before;
+            }
 
-                if (! empty($after)) {
-                    $query['after'] = $after;
-                }
+            if (! empty($after)) {
+                $query['after'] = $after;
+            }
 
-                $this->client->apimanager()->endpoints->channel
-                    ->getMessageReactions(
-                        $this->message->channel->getId(),
-                        $this->message->id,
-                        $this->emoji->identifier,
-                        $query
-                    )
-                    ->done(
-                        function ($data) use ($resolve) {
-                            foreach ($data as $react) {
-                                $user = $this->client->users->patch($react);
-                                $this->users->set($user->id, $user);
-                            }
+            $this->client->apimanager()->endpoints->channel
+                ->getMessageReactions($this->message->channel->getId(), $this->message->id, $this->emoji->identifier, $query)
+                ->done(function ($data) use ($resolve) {
+                    foreach ($data as $react) {
+                        $user = $this->client->users->patch($react);
+                        $this->users->set($user->id, $user);
+                    }
 
-                            $resolve($this->users);
-                        },
-                        $reject
-                    );
+                    $resolve($this->users);
+                }, $reject);
             }
         );
     }

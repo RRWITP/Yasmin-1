@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -14,23 +7,28 @@ use CharlotteDunois\Yasmin\Utils\DataHelpers;
 use RuntimeException;
 
 /**
+ * Class Activity
+ *
  * Something someone does.
  *
- * @property string $name           The name of the activity.
- * @property int $type           The activity type.
- * @property string|null $url            The stream url, if streaming.
- *
- * @property string|null $applicationID  The application ID associated with the activity, or null.
+ * @property string                  $name           The name of the activity.
+ * @property int                     $type           The activity type.
+ * @property string|null             $url            The stream url, if streaming.
+ * @property string|null             $applicationID  The application ID associated with the activity, or null.
  * @property RichPresenceAssets|null $assets         Assets for rich presence, or null.
- * @property string|null $details        Details about the activity, or null.
- * @property array|null $party          Party of the activity, an array in the format `[ 'id' => string, 'size' => [ size (int), max (int|null) ]|null ]`, or null.
- * @property string|null $state          State of the activity, or null.
- * @property array|null $timestamps     Timestamps for the activity, an array in the format `[ 'start' => \DateTime|null, 'end' => \DateTime|null ]`, or null.
- * @property int|null $flags          The activity flags (as bitfield), like if an activity is a spectate activity.
- * @property string|null $sessionID      The ID that links to the activity session.
- * @property string|null $syncID         The sync ID. For spotify, this is the spotify track ID.
+ * @property string|null             $details        Details about the activity, or null.
+ * @property array|null              $party          Party of the activity, an array in the format `[ 'id' => string, 'size' => [ size (int), max (int|null) ]|null ]`, or null.
+ * @property string|null             $state          State of the activity, or null.
+ * @property array|null              $timestamps     Timestamps for the activity, an array in the format `[ 'start' => \DateTime|null, 'end' => \DateTime|null ]`, or null.
+ * @property int|null                $flags          The activity flags (as bitfield), like if an activity is a spectate activity.
+ * @property string|null             $sessionID      The ID that links to the activity session.
+ * @property string|null             $syncID         The sync ID. For spotify, this is the spotify track ID.
+ * @property bool                    $streaming      Whether or not the activity is being streamed.
  *
- * @property bool $streaming      Whether or not the activity is being streamed.
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class Activity extends ClientBase
 {

@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin;
 
@@ -24,9 +17,16 @@ use DateTime;
 use Throwable;
 
 /**
+ * Class ClientEvents
+ *
  * Documents all Client events. ($client->on('name here', callable)).
  *
  * The second parameter of *Update events is null, if cloning for that event is disabled.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 interface ClientEvents
 {

@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\WebSocket;
 
@@ -22,15 +15,21 @@ use RuntimeException;
 use Throwable;
 
 /**
+ * Class WSManager
+ *
  * Manages the WS connections.
  *
- * @property Client $client
- * @property Connector $connector
+ * @property Client              $client
+ * @property Connector           $connector
  * @property WSEncodingInterface $encoding
- * @property string $gateway
- * @property int $lastIdentify
- * @property WSHandler $wshandler
+ * @property string              $gateway
+ * @property int                 $lastIdentify
+ * @property WSHandler           $wshandler
  *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  * @internal
  */
 class WSManager implements EventEmitterInterface

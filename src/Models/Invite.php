@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -20,22 +13,28 @@ use React\Promise\Promise;
 use RuntimeException;
 
 /**
+ * Class Invite
+ *
  * Represents an invite.
  *
- * @property string $code                The invite code.
- * @property Guild|PartialGuild|null $guild               The guild which this invite belongs to, or null.
+ * @property string                               $code                The invite code.
+ * @property Guild|PartialGuild|null              $guild               The guild which this invite belongs to, or null.
  * @property GuildChannelInterface|PartialChannel $channel             The channel which this invite belongs to.
- * @property int|null $createdTimestamp    When this invite was created, or null.
- * @property User|null $inviter             The inviter, or null.
- * @property int|null $maxUses             Maximum uses until the invite expires, or null.
- * @property int|null $maxAge              Duration (in seconds) until the invite expires, or null.
- * @property bool|null $temporary           If this invite grants temporary membership, or null.
- * @property int|null $uses                Number of times this invite has been used, or null.
- * @property int|null $presenceCount       Approximate amount of presences, or null.
- * @property int|null $memberCount         Approximate amount of members, or null.
+ * @property int|null                             $createdTimestamp    When this invite was created, or null.
+ * @property User|null                            $inviter             The inviter, or null.
+ * @property int|null                             $maxUses             Maximum uses until the invite expires, or null.
+ * @property int|null                             $maxAge              Duration (in seconds) until the invite expires, or null.
+ * @property bool|null                            $temporary           If this invite grants temporary membership, or null.
+ * @property int|null                             $uses                Number of times this invite has been used, or null.
+ * @property int|null                             $presenceCount       Approximate amount of presences, or null.
+ * @property int|null                             $memberCount         Approximate amount of members, or null.
+ * @property DateTime|null                        $createdAt           The DateTime instance of the createdTimestamp, or null.
+ * @property string                               $url                 Returns the URL for the invite.
  *
- * @property DateTime|null $createdAt           The DateTime instance of the createdTimestamp, or null.
- * @property string $url                 Returns the URL for the invite.
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class Invite extends ClientBase
 {

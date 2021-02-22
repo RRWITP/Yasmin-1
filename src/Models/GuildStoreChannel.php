@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -19,26 +12,33 @@ use DateTime;
 use RuntimeException;
 
 /**
+ * Class GuildStoreChannel
+ *
  * Represents a guild's store channel.
  *
- * @property string $id                     The channel ID.
- * @property Guild $guild                  The associated guild.
- * @property int $createdTimestamp       The timestamp of when this channel was created.
- * @property string $name                   The channel name.
- * @property bool $nsfw                   Whether the channel is marked as NSFW or not.
- * @property string|null $parentID               The ID of the parent channel, or null.
- * @property int $position               The channel position.
- * @property Collection $permissionOverwrites   A collection of PermissionOverwrite instances, mapped by their ID.
- *
- * @property DateTime $createdAt              The DateTime instance of createdTimestamp.
+ * @property string               $id                     The channel ID.
+ * @property Guild                $guild                  The associated guild.
+ * @property int                  $createdTimestamp       The timestamp of when this channel was created.
+ * @property string               $name                   The channel name.
+ * @property bool                 $nsfw                   Whether the channel is marked as NSFW or not.
+ * @property string|null          $parentID               The ID of the parent channel, or null.
+ * @property int                  $position               The channel position.
+ * @property Collection           $permissionOverwrites   A collection of PermissionOverwrite instances, mapped by their ID.
+ * @property DateTime             $createdAt              The DateTime instance of createdTimestamp.
  * @property CategoryChannel|null $parent                 The channel's parent, or null.
- * @method string getId()
- * @method int getCreatedTimestamp()
- * @method string getName()
- * @method Guild getGuild()
- * @method int getPosition()
- * @method Collection getPermissionOverwrites()
- * @method null getParent()
+ *
+ * @method string       getId()
+ * @method int          getCreatedTimestamp()
+ * @method string       getName()
+ * @method Guild        getGuild()
+ * @method int          getPosition()
+ * @method Collection   getPermissionOverwrites()
+ * @method null         getParent()
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class GuildStoreChannel extends ClientBase implements GuildStoreChannelInterface
 {

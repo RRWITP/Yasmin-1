@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -15,13 +8,20 @@ use InvalidArgumentException;
 use RuntimeException;
 
 /**
+ * Class RichPresenceAssets
+ *
  * Rich Presence assets.
  *
- * @property Activity $activity    The activity which these assets belong to.
+ * @property Activity    $activity    The activity which these assets belong to.
  * @property string|null $largeImage  The ID of the large image, or null.
  * @property string|null $largeText   The text of the large image, or null.
  * @property string|null $smallImage  The ID of the small image, or null.
  * @property string|null $smallText   The text of the small image, or null.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class RichPresenceAssets extends ClientBase
 {

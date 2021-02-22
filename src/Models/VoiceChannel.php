@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -20,28 +13,35 @@ use React\Promise\ExtendedPromiseInterface;
 use RuntimeException;
 
 /**
+ * Class VoiceChannel
+ *
  * Represents a guild's voice channel.
  *
- * @property string $id                     The ID of the channel.
- * @property int $createdTimestamp       The timestamp of when this channel was created.
- * @property string $name                   The name of the channel.
- * @property int $bitrate                The bitrate of the channel.
- * @property Guild $guild                  The guild the channel is in.
- * @property Collection $members                Holds all members which currently are in the voice channel. ({@see \CharlotteDunois\Yasmin\Models\GuildMember})
- * @property string|null $parentID               The ID of the parent channel, or null.
- * @property int $position               The position of the channel.
- * @property Collection $permissionOverwrites   A collection of PermissionOverwrite instances, mapped by their ID.
- * @property int $userLimit              The maximum amount of users allowed in the channel - 0 means unlimited.
- *
- * @property bool $full                   Checks if the voice channel is full.
+ * @property string               $id                     The ID of the channel.
+ * @property int                  $createdTimestamp       The timestamp of when this channel was created.
+ * @property string               $name                   The name of the channel.
+ * @property int                  $bitrate                The bitrate of the channel.
+ * @property Guild                $guild                  The guild the channel is in.
+ * @property Collection           $members                Holds all members which currently are in the voice channel. ({@see \CharlotteDunois\Yasmin\Models\GuildMember})
+ * @property string|null          $parentID               The ID of the parent channel, or null.
+ * @property int                  $position               The position of the channel.
+ * @property Collection           $permissionOverwrites   A collection of PermissionOverwrite instances, mapped by their ID.
+ * @property int                  $userLimit              The maximum amount of users allowed in the channel - 0 means unlimited.
+ * @property bool                 $full                   Checks if the voice channel is full.
  * @property CategoryChannel|null $parent                 Returns the channel's parent, or null.
- * @method string getId()
- * @method int getCreatedTimestamp()
- * @method string getName()
- * @method Guild getGuild()
- * @method int getPosition()
+ *
+ * @method string     getId()
+ * @method int        getCreatedTimestamp()
+ * @method string     getName()
+ * @method Guild      getGuild()
+ * @method int        getPosition()
  * @method Collection getPermissionOverwrites()
- * @method null getParent()
+ * @method null       getParent()
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class VoiceChannel extends ClientBase implements GuildVoiceChannelInterface
 {

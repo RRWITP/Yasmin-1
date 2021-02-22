@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Traits;
 
@@ -24,7 +17,14 @@ use React\Promise\Promise;
 use function React\Promise\resolve;
 
 /**
+ * Trait TextChannelTrait
+ *
  * The text based channel trait.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 trait TextChannelTrait
 {
@@ -132,19 +132,11 @@ trait TextChannelTrait
                             );
                         }
 
-                        $this->client->apimanager()->endpoints->channel->bulkDeleteMessages(
-                            $this->id,
-                            $messages,
-                            $reason
-                        )->done(
-                            function () use ($resolve) {
+                        $this->client->apimanager()->endpoints->channel->bulkDeleteMessages($this->id, $messages, $reason)
+                            ->done(function () use ($resolve): void {
                                 $resolve($this);
-                            },
-                            $reject
-                        );
-                    },
-                    $reject
-                );
+                            }, $reject);
+                        }, $reject);
             }
         );
     }

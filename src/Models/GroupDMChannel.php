@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -19,10 +12,17 @@ use React\Promise\Promise;
 use RuntimeException;
 
 /**
+ * Class GroupDMChannel
+ *
  * Represents a Group DM channel.
  *
  * @property string|null $applicationID  The application which created the group DM channel.
  * @property string|null $icon           The icon of the Group DM channel.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class GroupDMChannel extends DMChannel implements GroupDMChannelInterface
 {
@@ -116,16 +116,12 @@ class GroupDMChannel extends DMChannel implements GroupDMChannelInterface
             $user = $user->id;
         }
 
-        return new Promise(
-            function (callable $resolve, callable $reject) use ($user) {
-                $this->client->apimanager()->endpoints->channel->groupDMRemoveRecipient($this->id, $user)->done(
-                    function () use ($resolve) {
-                        $resolve($this);
-                    },
-                    $reject
-                );
-            }
-        );
+        return new Promise(function (callable $resolve, callable $reject) use ($user) {
+            $this->client->apimanager()->endpoints->channel->groupDMRemoveRecipient($this->id, $user)->done(
+                function () use ($resolve) {
+                    $resolve($this);
+                }, $reject);
+            });
     }
 
     /**

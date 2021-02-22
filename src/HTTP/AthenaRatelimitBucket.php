@@ -16,10 +16,15 @@ use RuntimeException;
 use Throwable;
 
 /**
- * Manages a route's ratelimit in Redis, using Athena. Requires client option `http.ratelimitbucket.athena` to be set to an instance of `AthenaCache`.
+ * Class AthenaRatelimitBucket
  *
+ * Manages a route's ratelimit in Redis, using Athena. Requires client option `http.ratelimitbucket.athena` to be set to an instance of `AthenaCache`.
  * Requires the suggested package `charlottedunois/athena`.
  *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  * @internal
  */
 class AthenaRatelimitBucket implements RatelimitBucketInterface

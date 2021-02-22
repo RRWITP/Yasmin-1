@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\WebSocket\Handlers;
 
@@ -49,8 +42,14 @@ use Exception;
 use RuntimeException;
 
 /**
+ * Class Dispatch
+ *
  * WS Event handler.
  *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  * @internal
  */
 class Dispatch implements WSHandlerInterface
@@ -97,12 +96,8 @@ class Dispatch implements WSHandlerInterface
             'VOICE_SERVER_UPDATE'         => VoiceServerUpdate::class,
         ];
 
-        $events = array_diff_key(
-            $allEvents,
-            array_flip(
-                (array) $this->wshandler->wsmanager->client->getOption('ws.disabledEvents', [])
-            )
-        );
+        $events = array_diff_key($allEvents, array_flip((array) $this->wshandler->wsmanager->client->getOption('ws.disabledEvents', [])));
+
         foreach ($events as $name => $class) {
             $this->register($name, $class);
         }

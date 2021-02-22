@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -20,13 +13,17 @@ use RuntimeException;
  * Represents a permission overwrite.
  *
  * @property GuildChannelInterface $channel   The channel this Permission Overwrite belongs to.
- * @property string $id        The ID of the Permission Overwrite.
- * @property string $type      The type of the overwrite (member or role).
- * @property Permissions $allow     The allowed Permissions instance.
- * @property Permissions $deny      The denied Permissions instance.
- *
- * @property Guild $guild     The guild this Permission Overwrite belongs to.
+ * @property string                 $id        The ID of the Permission Overwrite.
+ * @property string                $type      The type of the overwrite (member or role).
+ * @property Permissions           $allow     The allowed Permissions instance.
+ * @property Permissions           $deny      The denied Permissions instance.
+ * @property Guild                 $guild     The guild this Permission Overwrite belongs to.
  * @property Role|GuildMember|null $target    The role or guild member, or null if not a cached member.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class PermissionOverwrite extends ClientBase
 {
@@ -153,8 +150,7 @@ class PermissionOverwrite extends ClientBase
                     $this->channel->getId(),
                     $this->id,
                     $options,
-                    $reason
-                )->done(
+                    $reason)->done(
                     function () use ($options, $resolve) {
                         $this->allow = new Permissions(($options['allow'] ?? 0));
                         $this->deny = new Permissions(($options['deny'] ?? 0));

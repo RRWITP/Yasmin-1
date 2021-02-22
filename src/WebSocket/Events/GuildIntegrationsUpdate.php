@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\WebSocket\Events;
 
@@ -15,9 +8,16 @@ use CharlotteDunois\Yasmin\WebSocket\WSConnection;
 use CharlotteDunois\Yasmin\WebSocket\WSManager;
 
 /**
+ * Class GuildIntegrationsUpdate
+ *
  * WS Event.
  *
  * @see https://discordapp.com/developers/docs/topics/gateway#guild-integrations-update
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  * @internal
  */
 class GuildIntegrationsUpdate implements WSEventInterface

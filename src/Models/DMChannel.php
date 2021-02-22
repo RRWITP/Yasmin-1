@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -22,21 +15,28 @@ use InvalidArgumentException;
 use RuntimeException;
 
 /**
+ * Class DMChannel
+ *
  * Represents a classic DM channel.
  *
- * @property string $id                 The channel ID.
- * @property int $createdTimestamp   The timestamp of when this channel was created.
- * @property string|null $ownerID            The owner ID of this channel, or null.
- * @property Collection $recipients         The recipients of this channel, mapped by user ID.
- * @property string|null $lastMessageID      The last message ID, or null.
+ * @property string           $id                 The channel ID.
+ * @property int              $createdTimestamp   The timestamp of when this channel was created.
+ * @property string|null      $ownerID            The owner ID of this channel, or null.
+ * @property Collection       $recipients         The recipients of this channel, mapped by user ID.
+ * @property string|null      $lastMessageID      The last message ID, or null.
  * @property StorageInterface $messages           The storage with all cached messages.
+ * @property DateTime         $createdAt          The DateTime instance of createdTimestamp.
+ * @property User|null        $owner              The owner of this channel, or null.
  *
- * @property DateTime $createdAt          The DateTime instance of createdTimestamp.
- * @property User|null $owner              The owner of this channel, or null.
- * @method string getId()
- * @method int getCreatedTimestamp()
+ * @method string                  getId()
+ * @method int                     getCreatedTimestamp()
  * @method MessageStorageInterface getMessages()
- * @method string getLastMessageID()
+ * @method string                  getLastMessageID()
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class DMChannel extends ClientBase implements DMChannelInterface
 {

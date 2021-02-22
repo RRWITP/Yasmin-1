@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin;
 
@@ -14,6 +7,8 @@ use CharlotteDunois\Yasmin\Models\Webhook;
 use React\EventLoop\LoopInterface;
 
 /**
+ * Class WebhookClient
+ *
  * The webhook client.
  *
  * @property string $id         The webhook ID.
@@ -23,6 +18,11 @@ use React\EventLoop\LoopInterface;
  * @property string|null $guildID    The guild the webhook belongs to, or null.
  * @property User|null $owner      The owner of the webhook, or null.
  * @property string $token      The webhook token.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class WebhookClient extends Webhook
 {

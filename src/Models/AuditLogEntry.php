@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -15,20 +8,26 @@ use CharlotteDunois\Yasmin\Utils\Snowflake;
 use DateTime;
 
 /**
+ * Class AuditLogEntry
+ *
  * Represents a guild audit log entry.
  *
- * @property AuditLog $log               The guild audit log which this entry belongs to.
- * @property string $id                The ID of the audit log.
- * @property array[] $changes           Specific property changes.
- * @property string $userID            The ID of the user which triggered the audit log.
- * @property string $actionType        Specific action type of this entry in its string presentation.
+ * @property AuditLog    $log               The guild audit log which this entry belongs to.
+ * @property string      $id                The ID of the audit log.
+ * @property array[]     $changes           Specific property changes.
+ * @property string      $userID            The ID of the user which triggered the audit log.
+ * @property string      $actionType        Specific action type of this entry in its string presentation.
  * @property string|null $reason            The specified reason, or null.
- * @property int $createdTimestamp  When this audit log entry was created.
- * @property mixed|null $extra             Any extra data from the entry, or null.
- * @property mixed|null $target            The target of this entry, or null.
+ * @property int         $createdTimestamp  When this audit log entry was created.
+ * @property mixed|null  $extra             Any extra data from the entry, or null.
+ * @property mixed|null  $target            The target of this entry, or null.
+ * @property DateTime    $createdAt         The DateTime instance of createdTimestamp.
+ * @property User|null   $user              The user which triggered the audit log.
  *
- * @property DateTime $createdAt         The DateTime instance of createdTimestamp.
- * @property User|null $user              The user which triggered the audit log.
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class AuditLogEntry extends ClientBase
 {

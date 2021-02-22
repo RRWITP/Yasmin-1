@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -24,21 +17,27 @@ use React\Promise\Promise;
 use RuntimeException;
 
 /**
+ * Class User
+ *
  * Represents an user on Discord.
  *
- * @property string $id                 The user ID.
- * @property string $username           The username.
- * @property string $discriminator      The discriminator of this user.
- * @property bool $bot                Is the user a bot? Or are you a bot?
+ * @property string      $id                 The user ID.
+ * @property string      $username           The username.
+ * @property string      $discriminator      The discriminator of this user.
+ * @property bool        $bot                Is the user a bot? Or are you a bot?
  * @property string|null $avatar             The hash of the user's avatar, or null.
- * @property string $email              An email address or maybe nothing at all. More likely to be nothing at all.
- * @property bool|null $mfaEnabled         Whether the user has two factor enabled on their account, or null if no information provided.
- * @property bool|null $verified           Whether the email on this account has been verified, or null if no information provided.
- * @property bool $webhook            Determines wether the user is a webhook or not.
- * @property int $createdTimestamp   The timestamp of when this user was created.
+ * @property string      $email              An email address or maybe nothing at all. More likely to be nothing at all.
+ * @property bool|null   $mfaEnabled         Whether the user has two factor enabled on their account, or null if no information provided.
+ * @property bool|null   $verified           Whether the email on this account has been verified, or null if no information provided.
+ * @property bool        $webhook            Determines wether the user is a webhook or not.
+ * @property int         $createdTimestamp   The timestamp of when this user was created.
+ * @property DateTime    $createdAt          An DateTime instance of the createdTimestamp.
+ * @property string      $tag                Username#Discriminator.
  *
- * @property DateTime $createdAt          An DateTime instance of the createdTimestamp.
- * @property string $tag                Username#Discriminator.
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class User extends ClientBase
 {

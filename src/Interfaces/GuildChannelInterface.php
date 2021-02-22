@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Interfaces;
 
@@ -20,13 +13,20 @@ use InvalidArgumentException;
 use React\Promise\ExtendedPromiseInterface;
 
 /**
+ * Interface GuildChannelInterface
+ *
  * Something all guild channels implement.
  *
- * @method string                                               getName()                  Gets the channel's name.
+ * @method string                getName()                  Gets the channel's name.
  * @method Guild                 getGuild()                 Gets the associated guild.
- * @method int                                                  getPosition()              Gets the channel's position.
- * @method Collection                  getPermissionOverwrites()  Gets the channel's permission overwrites.
+ * @method int                   getPosition()              Gets the channel's position.
+ * @method Collection            getPermissionOverwrites()  Gets the channel's permission overwrites.
  * @method CategoryChannel|null  getParent()                Gets the channel's parent, or null.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 interface GuildChannelInterface extends ChannelInterface
 {

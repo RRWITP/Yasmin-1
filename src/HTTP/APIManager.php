@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\HTTP;
 
@@ -23,10 +16,17 @@ use RuntimeException;
 use Throwable;
 
 /**
+ * Class APIManager
+ *
  * Handles the API.
  *
  * @property Client $client
  * @property APIEndpoints $endpoints
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  * @internal
  */
 class APIManager

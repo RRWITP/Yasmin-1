@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\WebSocket\Events;
 
@@ -18,9 +11,16 @@ use CharlotteDunois\Yasmin\WebSocket\WSManager;
 use function React\Promise\all;
 
 /**
+ * Class ChannelCreate
+ *
  * WS Event.
  *
  * @see https://discordapp.com/developers/docs/topics/gateway#channel-create
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  * @internal
  */
 class ChannelCreate implements WSEventInterface
@@ -40,8 +40,8 @@ class ChannelCreate implements WSEventInterface
     public function handle(WSConnection $ws, $data): void
     {
         $channel = $this->client->channels->factory($data);
-
         $prom = [];
+
         if ($channel instanceof GuildChannelInterface) {
             foreach ($channel->getPermissionOverwrites() as $overwrite) {
                 if ($overwrite->type === 'member' && $overwrite->target === null) {
@@ -57,11 +57,9 @@ class ChannelCreate implements WSEventInterface
             }
         }
 
-        all($prom)->done(
-            function () use ($channel) {
+        all($prom)->done(function () use ($channel) {
                 $this->client->queuedEmit('channelCreate', $channel);
-            },
-            [$this->client, 'handlePromiseRejection']
+            }, [$this->client, 'handlePromiseRejection']
         );
     }
 }

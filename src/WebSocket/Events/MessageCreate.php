@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\WebSocket\Events;
 
@@ -20,9 +13,16 @@ use function React\Promise\all;
 use function React\Promise\resolve;
 
 /**
+ * Class MessageCreate
+ *
  * WS Event.
  *
  * @see https://discordapp.com/developers/docs/topics/gateway#message-create
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  * @internal
  */
 class MessageCreate implements WSEventInterface
@@ -92,12 +92,7 @@ class MessageCreate implements WSEventInterface
 
         $prm->done(function () use ($message) {
             if ($message->guild && ! ($message->member instanceof GuildMember) && ! $message->author->webhook) {
-                return $message->guild->fetchMember($message->author->id)->then(
-                    null,
-                    function () {
-                        // Ignore failure
-                    }
-                );
+                return $message->guild->fetchMember($message->author->id)->then(null, function () {});
             }
 
             $this->client->queuedEmit('message', $message);

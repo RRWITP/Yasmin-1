@@ -1,24 +1,24 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
 use CharlotteDunois\Yasmin\Client;
 
 /**
+ * Class UserConnection
+ *
  * Represents an user connection.
  *
  * @property string $id                 The ID of the connection account.
  * @property string $name               The username of the connection account.
  * @property string $type               The type of the user connection (e.g. twitch, youtube).
- * @property bool $revoked            Whether the connection is revoked.
- * @property User $user               The user which this user connection belongs to.
+ * @property bool   $revoked            Whether the connection is revoked.
+ * @property User   $user               The user which this user connection belongs to.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class UserConnection extends ClientBase
 {

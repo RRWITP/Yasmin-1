@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -14,14 +7,21 @@ use CharlotteDunois\Yasmin\Client;
 use RuntimeException;
 
 /**
+ * Class MessageMentions
+ *
  * Holds message mentions.
  *
- * @property Message $message   The message these mentions belongs to.
+ * @property Message    $message   The message these mentions belongs to.
  * @property Collection $channels  The collection which holds all channel mentions, mapped by their ID.
- * @property bool $everyone  Whether the message mentions @everyone or @here.
+ * @property bool       $everyone  Whether the message mentions @everyone or @here.
  * @property Collection $members   The collection which holds all members mentions (only in guild channels), mapped by their ID. Only cached members can be put into this Collection.
  * @property Collection $roles     The collection which holds all roles mentions, mapped by their ID.
  * @property Collection $users     The collection which holds all users mentions, mapped by their ID.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class MessageMentions extends ClientBase
 {

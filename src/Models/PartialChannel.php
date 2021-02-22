@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -18,15 +11,16 @@ use InvalidArgumentException;
 use RuntimeException;
 
 /**
+ * Class PartialChannel
+ *
  * Represents a partial channel (of a guild or a group DM).
  *
- * @property string $id                The channel ID.
- * @property string|null $name              The channel name, or null.
- * @property string $type              The type of the channel.
- * @property string|null $icon              The icon of the channel, or null.
- * @property int $createdTimestamp  The timestamp when this channel was created.
- *
- * @property DateTime $createdAt         The DateTime instance of createdTimestamp.
+ * @property string       $id                The channel ID.
+ * @property string|null  $name              The channel name, or null.
+ * @property string       $type              The type of the channel.
+ * @property string|null  $icon              The icon of the channel, or null.
+ * @property int          $createdTimestamp  The timestamp when this channel was created.
+ * @property DateTime     $createdAt         The DateTime instance of createdTimestamp.
  */
 class PartialChannel extends ClientBase
 {

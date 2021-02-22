@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -26,36 +19,44 @@ use function React\Promise\resolve;
 use RuntimeException;
 
 /**
+ * Class TextChannel
+ *
  * Represents a guild's text channel.
  *
- * @property string $id                     The channel ID.
- * @property Guild $guild                  The associated guild.
- * @property int $createdTimestamp       The timestamp of when this channel was created.
- * @property string $name                   The channel name.
- * @property string $topic                  The channel topic.
- * @property bool $nsfw                   Whether the channel is marked as NSFW or not.
- * @property string|null $parentID               The ID of the parent channel, or null.
- * @property int $position               The channel position.
- * @property int $slowmode               Ratelimit to send one message for each non-bot user, without `MANAGE_CHANNEL` and `MANAGE_MESSAGES` permissions, in seconds (0-120).
- * @property Collection $permissionOverwrites   A collection of PermissionOverwrite instances, mapped by their ID.
- * @property string|null $lastMessageID          The last message ID, or null.
+ * @property string                  $id                     The channel ID.
+ * @property Guild                   $guild                  The associated guild.
+ * @property int                     $createdTimestamp       The timestamp of when this channel was created.
+ * @property string                  $name                   The channel name.
+ * @property string                  $topic                  The channel topic.
+ * @property bool                    $nsfw                   Whether the channel is marked as NSFW or not.
+ * @property string|null             $parentID               The ID of the parent channel, or null.
+ * @property int                     $position               The channel position.
+ * @property int                     $slowmode               Rate limit to send one message for each non-bot user, without `MANAGE_CHANNEL` and `MANAGE_MESSAGES` permissions, in seconds (0-120).
+ * @property Collection              $permissionOverwrites   A collection of PermissionOverwrite instances, mapped by their ID.
+ * @property string|null             $lastMessageID          The last message ID, or null.
  * @property MessageStorageInterface $messages               The storage with all cached messages.
+ * @property DateTime                $createdAt              The DateTime instance of createdTimestamp.
+ * @property CategoryChannel|null    $parent                 The channel's parent, or null.
  *
- * @property DateTime $createdAt              The DateTime instance of createdTimestamp.
- * @property CategoryChannel|null $parent                 The channel's parent, or null.
- * @method string getId()
- * @method int getCreatedTimestamp()
- * @method string getName()
- * @method Guild getGuild()
- * @method int getPosition()
- * @method Collection getPermissionOverwrites()
- * @method null getParent()
- * @method MessageStorageInterface getMessages()
- * @method string getLastMessageID()
+ * @method string                   getId()
+ * @method int                      getCreatedTimestamp()
+ * @method string                   getName()
+ * @method Guild                    getGuild()
+ * @method int                      getPosition()
+ * @method Collection               getPermissionOverwrites()
+ * @method null                     getParent()
+ * @method MessageStorageInterface  getMessages()
+ * @method string                   getLastMessageID()
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class TextChannel extends ClientBase implements GuildTextChannelInterface
 {
-    use GuildChannelTrait, TextChannelTrait;
+    use GuildChannelTrait;
+    use TextChannelTrait;
 
     /**
      * The associated guild.
@@ -262,7 +263,7 @@ class TextChannel extends ClientBase implements GuildTextChannelInterface
     }
 
     /**
-     * Sets the slowmode in seconds for this channel.
+     * Sets the slow mode in seconds for this channel.
      *
      * @param  int  $slowmode  0-21600
      * @param  string  $reason

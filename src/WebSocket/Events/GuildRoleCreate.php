@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\WebSocket\Events;
 
@@ -15,9 +8,16 @@ use CharlotteDunois\Yasmin\WebSocket\WSConnection;
 use CharlotteDunois\Yasmin\WebSocket\WSManager;
 
 /**
+ * Class GuildRoleCreate
+ *
  * WS Event.
  *
  * @see https://discordapp.com/developers/docs/topics/gateway#guild-role-create
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  * @internal
  */
 class GuildRoleCreate implements WSEventInterface
@@ -39,6 +39,7 @@ class GuildRoleCreate implements WSEventInterface
     public function handle(WSConnection $ws, $data): void
     {
         $guild = $this->client->guilds->get($data['guild_id']);
+
         if ($guild) {
             $role = $guild->roles->factory($data['role']);
             $this->client->queuedEmit('roleCreate', $role);

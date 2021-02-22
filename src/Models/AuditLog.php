@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -13,12 +6,19 @@ use CharlotteDunois\Collect\Collection;
 use CharlotteDunois\Yasmin\Client;
 
 /**
+ * Class AuditLog
+ *
  * Represents a guild audit log.
  *
- * @property Guild $guild     Which guild this audit log is for.
+ * @property Guild      $guild     Which guild this audit log is for.
  * @property Collection $entries   Holds the entries, mapped by their ID.
  * @property Collection $users     Holds the found users in the audit log, mapped by their ID.
  * @property Collection $webhooks  Holds the found webhooks in the audit log, mapped by their ID.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class AuditLog extends ClientBase
 {

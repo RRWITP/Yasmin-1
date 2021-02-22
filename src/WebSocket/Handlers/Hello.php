@@ -14,8 +14,15 @@ use CharlotteDunois\Yasmin\WebSocket\WSConnection;
 use CharlotteDunois\Yasmin\WebSocket\WSHandler;
 
 /**
+ * Class Hello
+ *
  * WS Event handler.
  *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
+ * @internal
  * @internal
  */
 class Hello implements WSHandlerInterface

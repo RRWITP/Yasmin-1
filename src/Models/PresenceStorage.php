@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -14,7 +7,14 @@ use CharlotteDunois\Yasmin\Interfaces\PresenceStorageInterface;
 use InvalidArgumentException;
 
 /**
+ * Class PresenceStorage
+ *
  * Presence Storage, which utilizes Collection.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class PresenceStorage extends Storage implements PresenceStorageInterface
 {

@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Interfaces;
 
@@ -15,6 +8,8 @@ use React\Promise\ExtendedPromiseInterface;
 use RuntimeException;
 
 /**
+ * Interface RatelimitInterface
+ *
  * This interface defines required methods and their arguments for managing route ratelimits using various systems.<br>
  * The ratelimit bucket queue is always managed in memory (as in belongs to that process), however the ratelimits are distributed to the used system.
  *
@@ -26,6 +21,11 @@ use RuntimeException;
  *
  * The Redis ratelimit bucket system uses Athena, an asynchronous redis cache for PHP. The package is called `charlottedunois/athena` (which is suggested on composer).<br>
  * To be able to use the Redis ratelimit bucket, you need to pass an instance of `AthenaCache` as client option `http.ratelimitbucket.athena` to the client.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 interface RatelimitBucketInterface
 {

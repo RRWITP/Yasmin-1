@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -21,27 +14,33 @@ use React\Promise\Promise;
 use RuntimeException;
 
 /**
+ * Class GuildMember
+ *
  * Represents a guild member.
  *
- * @property string $id               The ID of the member.
- * @property string|null $nickname         The nickname of the member, or null.
- * @property bool $deaf             Whether the member is server deafened.
- * @property bool $mute             Whether the member is server muted.
- * @property Guild $guild            The guild this member belongs to.
- * @property int $joinedTimestamp  The timestamp of when this member joined.
- * @property bool $selfDeaf         Whether the member is locally deafened.
- * @property bool $selfMute         Whether the member is locally muted.
- * @property Collection $roles            A Collection of all roles the member has, mapped by their ID. ({@see \CharlotteDunois\Yasmin\Models\Role})
- * @property bool $suppress         Whether you suppress the member.
- * @property string|null $voiceChannelID   The ID of the voice channel the member is in, or null.
- * @property string $voiceSessionID   The voice session ID, or null.
- *
- * @property string $displayName      The displayed name.
- * @property DateTime $joinedAt         An DateTime instance of joinedTimestamp.
- * @property Permissions $permissions      The permissions of the member, only taking roles into account.
- * @property Presence|null $presence         The presence of the member in this guild, or null.
- * @property User|null $user             The User instance of the member. This should never be null, unless you fuck up.
+ * @property string            $id               The ID of the member.
+ * @property string|null       $nickname         The nickname of the member, or null.
+ * @property bool              $deaf             Whether the member is server deafened.
+ * @property bool              $mute             Whether the member is server muted.
+ * @property Guild             $guild            The guild this member belongs to.
+ * @property int               $joinedTimestamp  The timestamp of when this member joined.
+ * @property bool              $selfDeaf         Whether the member is locally deafened.
+ * @property bool              $selfMute         Whether the member is locally muted.
+ * @property Collection        $roles            A Collection of all roles the member has, mapped by their ID. ({@see \CharlotteDunois\Yasmin\Models\Role})
+ * @property bool              $suppress         Whether you suppress the member.
+ * @property string|null       $voiceChannelID   The ID of the voice channel the member is in, or null.
+ * @property string            $voiceSessionID   The voice session ID, or null.
+ * @property string            $displayName      The displayed name.
+ * @property DateTime          $joinedAt         An DateTime instance of joinedTimestamp.
+ * @property Permissions       $permissions      The permissions of the member, only taking roles into account.
+ * @property Presence|null     $presence         The presence of the member in this guild, or null.
+ * @property User|null         $user             The User instance of the member. This should never be null, unless you fuck up.
  * @property VoiceChannel|null $voiceChannel     The voice channel the member is in, if connected to voice, or null.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class GuildMember extends ClientBase
 {

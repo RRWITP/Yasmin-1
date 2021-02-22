@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -23,15 +16,22 @@ use function React\Promise\resolve;
 use RuntimeException;
 
 /**
+ * Class Webhook
+ *
  * Represents a webhook.
  *
- * @property string $id         The webhook ID.
+ * @property string      $id         The webhook ID.
  * @property string|null $name       The webhook default name, or null.
  * @property string|null $avatar     The webhook default avatar, or null.
  * @property string|null $channelID  The channel ID the webhook belongs to.
  * @property string|null $guildID    The guild ID the webhook belongs to, or null.
- * @property User|null $owner      The owner of the webhook, or null.
+ * @property User|null   $owner      The owner of the webhook, or null.
  * @property string|null $token      The webhook token, or null.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class Webhook extends ClientBase
 {

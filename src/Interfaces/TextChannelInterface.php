@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Interfaces;
 
@@ -16,10 +9,17 @@ use RangeException;
 use React\Promise\ExtendedPromiseInterface;
 
 /**
+ * Interface TextChannelInterface
+ *
  * Something all text channels implement.
  *
  * @method MessageStorageInterface  getMessages()       Gets the storage with all cached messages.
- * @method string                                                      getLastMessageID()  Gets the ID of the last sent message in this channel.
+ * @method string                   getLastMessageID()  Gets the ID of the last sent message in this channel.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 interface TextChannelInterface extends ChannelInterface
 {

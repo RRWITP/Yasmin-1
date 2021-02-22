@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -18,23 +11,29 @@ use RuntimeException;
 use Throwable;
 
 /**
+ * Class MessageEmbed
+ *
  * Represents a received embed from a message. This class can also be used to make a Rich Embed.
  *
- * @property string $type               The embed type.
- * @property string|null $title              The title, or null.
- * @property array|null $author             The author in the format `[ 'name' => string, 'icon' => string, 'url' => string ]`, or null.
- * @property string|null $description        The description, or null.
- * @property string|null $url                The URL, or null.
+ * @property string          $type               The embed type.
+ * @property string|null     $title              The title, or null.
+ * @property array|null      $author             The author in the format `[ 'name' => string, 'icon' => string, 'url' => string ]`, or null.
+ * @property string|null     $description        The description, or null.
+ * @property string|null     $url                The URL, or null.
  * @property int|string|null $timestamp          The timestamp, or the set timestamp (as ISO string), or null.
- * @property int|null $color              The color, or null.
- * @property array|null $footer             The footer in the format `[ 'name' => string, 'icon' => string ]`, or null.
- * @property array|null $image              The image in the format `[ 'url' => string, 'height' => int, 'width' => int ]`, or null.
- * @property array|null $thumbnail          The thumbnail in the format `[ 'url' => string, 'height' => int, 'width' => int ]`, or null.
- * @property array|null $video              The video in the format `[ 'url' => string, 'height' => int, 'width' => int ]`, or null.
- * @property array|null $provider           The provider in the format `[ 'name' => string, 'url' => string ]`, or null.
- * @property array[] $fields             An array of embed fields in the format `[ 'name' > string, 'value' => string, 'inline' => bool ]`.
+ * @property int|null        $color              The color, or null.
+ * @property array|null      $footer             The footer in the format `[ 'name' => string, 'icon' => string ]`, or null.
+ * @property array|null      $image              The image in the format `[ 'url' => string, 'height' => int, 'width' => int ]`, or null.
+ * @property array|null      $thumbnail          The thumbnail in the format `[ 'url' => string, 'height' => int, 'width' => int ]`, or null.
+ * @property array|null      $video              The video in the format `[ 'url' => string, 'height' => int, 'width' => int ]`, or null.
+ * @property array|null      $provider           The provider in the format `[ 'name' => string, 'url' => string ]`, or null.
+ * @property array[]         $fields             An array of embed fields in the format `[ 'name' > string, 'value' => string, 'inline' => bool ]`.
+ * @property DateTime|null   $datetime           The DateTime instance of timestamp, or null.
  *
- * @property DateTime|null $datetime           The DateTime instance of timestamp, or null.
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class MessageEmbed extends Base
 {

@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -13,15 +6,21 @@ use CharlotteDunois\Yasmin\Client;
 use RuntimeException;
 
 /**
+ * Class Presence
+ *
  * Represents a presence.
  *
- * @property Activity|null $activity        The current activity the user is doing, or null.
- * @property Activity[] $activities      All activities the user is doing.
- * @property string $status          What do you expect this to be?
+ * @property Activity|null     $activity        The current activity the user is doing, or null.
+ * @property Activity[]        $activities      All activities the user is doing.
+ * @property string            $status          What do you expect this to be?
  * @property ClientStatus|null $clientStatus    The client's status on desktop/mobile/web, or null.
- * @property string $userID          The user ID this presence belongs to.
+ * @property string            $userID          The user ID this presence belongs to.
+ * @property User|null         $user            The user this presence belongs to.
  *
- * @property User|null $user            The user this presence belongs to.
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class Presence extends ClientBase
 {

@@ -1,12 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
-
 namespace CharlotteDunois\Yasmin\WebSocket\Events;
 
 use CharlotteDunois\Yasmin\Client;
@@ -17,9 +9,16 @@ use CharlotteDunois\Yasmin\WebSocket\WSManager;
 use function React\Promise\resolve;
 
 /**
+ * Class PresenceUpdate
+ *
  * WS Event.
  *
  * @see https://discordapp.com/developers/docs/topics/gateway#presence-update
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  * @internal
  */
 class PresenceUpdate implements WSEventInterface

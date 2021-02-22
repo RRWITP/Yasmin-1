@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Interfaces;
 
@@ -13,7 +6,14 @@ use CharlotteDunois\Yasmin\Models\Guild;
 use InvalidArgumentException;
 
 /**
+ * Interface ChannelStorageInterface
+ *
  * Something all channel storages implement. The storage also is used as factory.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 interface ChannelStorageInterface extends StorageInterface
 {

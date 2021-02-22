@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin;
 
@@ -56,22 +49,29 @@ use function React\Promise\resolve;
 use RuntimeException;
 
 /**
+ * Class Client
+ *
  * The client. What else do you expect this to say?
  *
- * @property LoopInterface $loop       The event loop.
- * @property ChannelStorageInterface $channels   Holds all cached channels, mapped by ID.
- * @property EmojiStorageInterface $emojis     Holds all emojis, mapped by ID (custom emojis) and/or name (unicode emojis).
- * @property GuildStorageInterface $guilds     Holds all guilds, mapped by ID.
+ * @property LoopInterface            $loop       The event loop.
+ * @property ChannelStorageInterface  $channels   Holds all cached channels, mapped by ID.
+ * @property EmojiStorageInterface    $emojis     Holds all emojis, mapped by ID (custom emojis) and/or name (unicode emojis).
+ * @property GuildStorageInterface    $guilds     Holds all guilds, mapped by ID.
  * @property PresenceStorageInterface $presences  Holds all cached presences (latest ones), mapped by user ID.
- * @property UserStorageInterface $users      Holds all cached users, mapped by ID.
- * @property int[] $pings      The last 3 websocket pings of each shard.
- * @property Collection $shards     Holds all shards, mapped by shard ID.
- * @property ClientUser|null $user       User that the client is logged in as. The instance gets created when the client turns ready.
+ * @property UserStorageInterface     $users      Holds all cached users, mapped by ID.
+ * @property int[]                    $pings      The last 3 websocket pings of each shard.
+ * @property Collection               $shards     Holds all shards, mapped by shard ID.
+ * @property ClientUser|null          $user       User that the client is logged in as. The instance gets created when the client turns ready.
  *
  * @method on(string $event, callable $listener)               Attach a listener to an event. The method is from the trait - only for documentation purpose here.
  * @method once(string $event, callable $listener)             Attach a listener to an event, for exactly once. The method is from the trait - only for documentation purpose here.
  * @method removeListener(string $event, callable $listener)   Remove specified listener from an event. The method is from the trait - only for documentation purpose here.
  * @method removeAllListeners($event = null)                   Remove all listeners from an event ( or all listeners).
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class Client implements EventEmitterInterface
 {
@@ -356,14 +356,11 @@ class Client implements EventEmitterInterface
                 }
             );
 
-            $this->ws->once(
-                'ready',
-                function () {
-                    while ([$event, $args] = array_shift($this->eventsQueue)) {
-                        $this->emit($event, ...$args);
-                    }
+            $this->ws->once('ready', function (): void {
+                while ([$event, $args] = array_shift($this->eventsQueue)) {
+                    $this->emit($event, ...$args);
                 }
-            );
+            });
         }
 
         $this->checkOptionsStorages();

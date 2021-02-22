@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -14,13 +7,19 @@ use CharlotteDunois\Yasmin\Utils\DataHelpers;
 use RuntimeException;
 
 /**
+ * Class MessageActivity
+ *
  * Represents a message activity.
  *
- * @property string|null $partyID   The party ID associated with this message activity, or null.
- * @property int $type      The message activity type. ({@see self::TYPES})
- * @property User|null $user      The user this message activity is for.
+ * @property string|null    $partyID   The party ID associated with this message activity, or null.
+ * @property int            $type      The message activity type. ({@see self::TYPES})
+ * @property User|null      $user      The user this message activity is for.
+ * @property Activity|null  $activity  The activity this message activity points to, or null.
  *
- * @property Activity|null $activity  The activity this message activity points to, or null.
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class MessageActivity extends ClientBase
 {

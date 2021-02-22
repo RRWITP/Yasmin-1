@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -13,9 +6,16 @@ use CharlotteDunois\Yasmin\Client;
 use Exception;
 
 /**
+ * Class ClientBase
+ *
  * Something all Models, with the need for a client, extend.
  *
  * @property Client $client  The client which initiated the instance.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 abstract class ClientBase extends Base
 {

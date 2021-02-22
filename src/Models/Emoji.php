@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -22,21 +15,27 @@ use function React\Promise\resolve;
 use RuntimeException;
 
 /**
+ * Class Emoji
+ *
  * Represents an emoji - both custom and unicode emojis.
  *
- * @property string|null $id                 The emoji ID, or null for unicode emoji.
- * @property string $name               The emoji name.
- * @property User|null $user               The user that created the emoji, or null.
- * @property Guild|null $guild              The guild this emoji belongs to, or null.
- * @property int|null $createdTimestamp   The timestamp of when this emoji was created, or null for unicode emoji.
- * @property bool $animated           Whether this emoji is animated.
- * @property bool $managed            Is the emoji managed?
- * @property bool $requireColons      Does the emoji require colons?
- * @property Collection $roles              A collection of roles that this emoji is active for (empty if all).
- *
+ * @property string|null   $id                 The emoji ID, or null for unicode emoji.
+ * @property string        $name               The emoji name.
+ * @property User|null     $user               The user that created the emoji, or null.
+ * @property Guild|null    $guild              The guild this emoji belongs to, or null.
+ * @property int|null      $createdTimestamp   The timestamp of when this emoji was created, or null for unicode emoji.
+ * @property bool          $animated           Whether this emoji is animated.
+ * @property bool          $managed            Is the emoji managed?
+ * @property bool          $requireColons      Does the emoji require colons?
+ * @property Collection    $roles              A collection of roles that this emoji is active for (empty if all).
  * @property DateTime|null $createdAt          An DateTime instance of the createdTimestamp, or null for unicode emoji.
- * @property string $identifier         The identifier for the emoji.
- * @property int|string $uid                The used identifier in the system (ID or name, that is).
+ * @property string        $identifier         The identifier for the emoji.
+ * @property int|string    $uid                The used identifier in the system (ID or name, that is).
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class Emoji extends ClientBase
 {

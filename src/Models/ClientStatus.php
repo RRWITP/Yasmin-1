@@ -1,22 +1,22 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
 use RuntimeException;
 
 /**
+ * Class ClientStatus
+ *
  * Represents an user's client status.
  *
  * @property string|null $desktop  The status of the user on the desktop client.
  * @property string|null $mobile   The status of the user on the mobile client.
  * @property string|null $web      The status of the user on the web client.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class ClientStatus extends Base
 {

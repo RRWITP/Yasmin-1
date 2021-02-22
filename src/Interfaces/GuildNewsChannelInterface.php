@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Interfaces;
 
@@ -13,7 +6,14 @@ use InvalidArgumentException;
 use React\Promise\ExtendedPromiseInterface;
 
 /**
+ * Interface GuildNewChannelInterface
+ *
  * Something all guild news channels implement.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 interface GuildNewsChannelInterface extends GuildChannelInterface, TextChannelInterface
 {

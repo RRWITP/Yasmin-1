@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -15,13 +8,20 @@ use InvalidArgumentException;
 use RuntimeException;
 
 /**
+ * Class MessageApplication
+ *
  * Represents a message application.
  *
- * @property string $id           The ID of the application.
- * @property string $name         The name of the application.
+ * @property string      $id           The ID of the application.
+ * @property string      $name         The name of the application.
  * @property string|null $icon         The hash of the application icon, or null.
  * @property string|null $coverImage   The hash of the application cover image, or null.
- * @property string $description  The description of the application.
+ * @property string      $description  The description of the application.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class MessageApplication extends ClientBase
 {

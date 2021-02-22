@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -20,22 +13,28 @@ use React\Promise\Promise;
 use RuntimeException;
 
 /**
+ * Class Role
+ *
  * Represents a role.
  *
- * @property Guild $guild               The guild the role belongs to.
- * @property string $id                  The role ID.
- * @property string $name                The role name.
- * @property int $createdTimestamp    The timestamp of when the role was created.
- * @property int $color               The color of the role.
- * @property bool $hoist               Whether the role gets displayed separately in the member list.
- * @property int $position            The position of the role in the API.
+ * @property Guild       $guild               The guild the role belongs to.
+ * @property string      $id                  The role ID.
+ * @property string      $name                The role name.
+ * @property int         $createdTimestamp    The timestamp of when the role was created.
+ * @property int         $color               The color of the role.
+ * @property bool        $hoist               Whether the role gets displayed separately in the member list.
+ * @property int         $position            The position of the role in the API.
  * @property Permissions $permissions         The permissions of the role.
- * @property bool $managed             Whether the role is managed by an integration.
- * @property bool $mentionable         Whether the role is mentionable.
+ * @property bool        $managed             Whether the role is managed by an integration.
+ * @property bool        $mentionable         Whether the role is mentionable.
+ * @property DateTime    $createdAt           The DateTime instance of createdTimestamp.
+ * @property string      $hexColor            Returns the hex color of the role color.
+ * @property Collection  $members             A collection of all (cached) guild members which have the role.
  *
- * @property DateTime $createdAt           The DateTime instance of createdTimestamp.
- * @property string $hexColor            Returns the hex color of the role color.
- * @property Collection $members             A collection of all (cached) guild members which have the role.
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class Role extends ClientBase
 {

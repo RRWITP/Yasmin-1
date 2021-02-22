@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -13,14 +6,21 @@ use CharlotteDunois\Yasmin\Client;
 use RuntimeException;
 
 /**
+ * Class VoiceRegion
+ *
  * Represents a voice region.
  *
  * @property string $id          The ID of the region.
  * @property string $name        The name of the region.
- * @property bool $vip         Whether this is a VIP voice region.
- * @property bool $optimal     Whether this is an optimal voice region for the client user.
- * @property bool $deprecated  Whether this voice region is deprecated and therefore should be avoided.
- * @property bool $custom      Whether the region is custom.
+ * @property bool   $vip         Whether this is a VIP voice region.
+ * @property bool   $optimal     Whether this is an optimal voice region for the client user.
+ * @property bool   $deprecated  Whether this voice region is deprecated and therefore should be avoided.
+ * @property bool   $custom      Whether the region is custom.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class VoiceRegion extends ClientBase
 {

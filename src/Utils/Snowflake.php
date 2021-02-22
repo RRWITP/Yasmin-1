@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Utils;
 
@@ -14,15 +7,22 @@ use Exception;
 use InvalidArgumentException;
 
 /**
+ * Class Snowflake
+ *
  * Represents a Snowflake.
  *
- * @property float $timestamp  The timestamp of when this snowflake got generated. In seconds with microseconds.
- * @property int $workerID   The ID of the worker which generated this snowflake.
- * @property int $processID  The ID of the process which generated this snowflake.
- * @property int $increment  The increment index of the snowflake.
- * @property string $binary     The binary representation of this snowflake.
+ * @property float      $timestamp  The timestamp of when this snowflake got generated. In seconds with microseconds.
+ * @property int        $workerID   The ID of the worker which generated this snowflake.
+ * @property int        $processID  The ID of the process which generated this snowflake.
+ * @property int        $increment  The increment index of the snowflake.
+ * @property string     $binary     The binary representation of this snowflake.
  * @property string|int $value      The snowflake value.
- * @property DateTime $date       A DateTime instance of the timestamp.
+ * @property DateTime   $date       A DateTime instance of the timestamp.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class Snowflake
 {

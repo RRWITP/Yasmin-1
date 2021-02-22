@@ -16,8 +16,14 @@ use Ratchet\RFC6455\Messaging\Message;
 use RuntimeException;
 
 /**
+ * Class Json
+ *
  * Handles WS encoding.
  *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  * @internal
  */
 class Json implements WSEncodingInterface

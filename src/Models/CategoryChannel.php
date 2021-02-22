@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -20,23 +13,30 @@ use DateTime;
 use RuntimeException;
 
 /**
+ * Class CategoryChannel
+ *
  * Represents a guild's category channel.
  *
- * @property string $id                     The ID of the channel.
- * @property string $name                   The channel name.
- * @property Guild $guild                  The guild this category channel belongs to.
- * @property int $createdTimestamp       The timestamp of when this channel was created.
- * @property int $position               The channel position.
+ * @property string     $id                     The ID of the channel.
+ * @property string     $name                   The channel name.
+ * @property Guild      $guild                  The guild this category channel belongs to.
+ * @property int        $createdTimestamp       The timestamp of when this channel was created.
+ * @property int        $position               The channel position.
  * @property Collection $permissionOverwrites   A collection of PermissionOverwrite instances.
+ * @property DateTime   $createdAt              The DateTime instance of createdTimestamp.
  *
- * @property DateTime $createdAt              The DateTime instance of createdTimestamp.
- * @method string getId()
- * @method int getCreatedTimestamp()
- * @method string getName()
- * @method Guild getGuild()
- * @method int getPosition()
- * @method Collection getPermissionOverwrites()
- * @method null getParent()
+ * @method string       getId()
+ * @method int          getCreatedTimestamp()
+ * @method string       getName()
+ * @method Guild        getGuild()
+ * @method int          getPosition()
+ * @method Collection   getPermissionOverwrites()
+ * @method null         getParent()
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class CategoryChannel extends ClientBase implements CategoryChannelInterface
 {

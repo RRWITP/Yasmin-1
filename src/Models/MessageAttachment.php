@@ -1,11 +1,4 @@
 <?php
-/**
- * Yasmin
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved.
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
- */
 
 namespace CharlotteDunois\Yasmin\Models;
 
@@ -15,17 +8,23 @@ use DateTime;
 use RuntimeException;
 
 /**
+ * Class MessageAttachment
+ *
  * Represents an attachment (from a message).
  *
- * @property string $id                 The attachment ID.
- * @property string $filename           The filename.
- * @property int $size               The filesize in bytes.
- * @property string $url                The url to the file.
+ * @property string   $id                 The attachment ID.
+ * @property string   $filename           The filename.
+ * @property int      $size               The filesize in bytes.
+ * @property string   $url                The url to the file.
  * @property int|null $height             The height (if image), or null.
  * @property int|null $width              The width (if image), or null.
- * @property int $createdTimestamp   The timestamp of when this attachment was created.
- *
+ * @property int      $createdTimestamp   The timestamp of when this attachment was created.
  * @property DateTime $createdAt          An DateTime instance of the createdTimestamp.
+ *
+ * @author       Charlotte Dunois (https://charuru.moe)
+ * @copyright    2017-2019 Charlotte Dunois
+ * @license      https://github.com/CharlotteDunois/Yasmin/blob/master/LICENSE
+ * @package      Yasmin
  */
 class MessageAttachment extends Base
 {
@@ -98,15 +97,8 @@ class MessageAttachment extends Base
             $this->filename = (string) $attachment['filename'];
             $this->size = (int) $attachment['size'];
             $this->url = (string) $attachment['url'];
-            $this->height = DataHelpers::typecastVariable(
-                ($attachment['height'] ?? null),
-                'int'
-            );
-            $this->width = DataHelpers::typecastVariable(
-                ($attachment['width'] ?? null),
-                'int'
-            );
-
+            $this->height = DataHelpers::typecastVariable(($attachment['height'] ?? null), 'int');
+            $this->width = DataHelpers::typecastVariable(($attachment['width'] ?? null), 'int');
             $this->createdTimestamp = (int) Snowflake::deconstruct($this->id)->timestamp;
         }
     }
